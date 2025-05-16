@@ -1,3 +1,12 @@
+import products from '../public/products';
+import Product from './components/Product';
+
 export default function App() {
-	return <h1 className='text-2xl text-green-500'>Hello World!</h1>;
+	return (
+		<>
+			{products.map((product) => (
+				<Product key={product._id} product={product} />
+			))}
+		</>
+	);
 }
