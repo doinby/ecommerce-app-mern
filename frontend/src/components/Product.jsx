@@ -1,22 +1,15 @@
-export default function Product({ product }) {
-	const {
-		name,
-		image,
-		description,
-		brand,
-		category,
-		price,
-		countInStock,
-		rating,
-		numReviews,
-	} = product;
+import products from '../../public/products.js';
+import ProductCard from './ProductCard';
 
-	// const { image } = product;
-
+export default function Product() {
 	return (
-		<div className='w-48'>
-			<p>{name}</p>
-			<img src={image} />
-		</div>
+		<section id='latest-products'>
+			<h2 className='text-2xl'>Latest Products</h2>
+			<div className='flex flex-wrap gap-6 justify-center'>
+				{products.map((product) => (
+					<ProductCard key={product._id} product={product} />
+				))}
+			</div>
+		</section>
 	);
 }
