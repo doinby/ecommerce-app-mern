@@ -1,17 +1,19 @@
 import Header from './components/Header';
-import Product from './components/Product';
-import { Routes, Route } from 'react-router';
+import { Routes, Route, BrowserRouter } from 'react-router';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Login from './pages/Login';
 
 export default function App() {
 	return (
 		<>
-			<Routes>
-				<Route path='login' element={} />
-			</Routes>
 			<Header />
-			<main className='mx-[5%] flex flex-col justify-center align-center'>
-				<Product />
-			</main>
+			<Routes>
+				{/* <Route path='login' element={} /> */}
+				<Route index element={<Home />} />
+				<Route path='cart' element={<Cart />} />
+				<Route path='login' element={<Login />} />
+			</Routes>
 		</>
 	);
 }
