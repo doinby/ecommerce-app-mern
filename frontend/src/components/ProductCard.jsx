@@ -1,10 +1,13 @@
+import { Link } from 'react-router';
+
 export default function ProductCard({ product }) {
 	const {
+		_id,
 		name,
 		image,
 		// description,
 		// brand,
-		// category,
+		category,
 		price,
 		// countInStock,
 		// rating,
@@ -12,10 +15,13 @@ export default function ProductCard({ product }) {
 	} = product;
 
 	return (
-		<article className='w-48 p-2 rounded-sm border-1 border-slate-300'>
+		<Link
+			to={`/${category}/${_id}`}
+			className='w-48 p-2 rounded-sm border-1 border-slate-300'
+		>
 			<p>{name}</p>
 			<img className='' src={image} />
 			<p>${price}</p>
-		</article>
+		</Link>
 	);
 }
