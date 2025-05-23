@@ -1,7 +1,7 @@
 import products from '../../public/products.js';
-import ProductCard from './ProductCard';
+import ProductCard from './ProductCard.jsx';
 
-export default function Product() {
+export default function Products() {
 	return (
 		<section id='latest-products'>
 			<h2 className='text-2xl'>Latest Products</h2>
