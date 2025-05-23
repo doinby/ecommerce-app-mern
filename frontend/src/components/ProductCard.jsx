@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import Rating from './Rating';
 
 export default function ProductCard({ product }) {
 	const {
@@ -10,7 +11,7 @@ export default function ProductCard({ product }) {
 		category,
 		price,
 		// countInStock,
-		// rating,
+		rating,
 		// numReviews,
 	} = product;
 
@@ -21,6 +22,7 @@ export default function ProductCard({ product }) {
 		>
 			<p>{name}</p>
 			<img className='' src={image} />
+			<Rating rating={rating} />
 			<p>${price}</p>
 		</Link>
 	);
