@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
-	BrowserRouter,
 	createBrowserRouter,
 	createRoutesFromElements,
 	RouterProvider,
@@ -11,11 +10,13 @@ import {
 import './index.css';
 import App from './App.jsx';
 import Home from './pages/Home.jsx';
+import Product from './pages/Product.jsx';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<App />}>
 			<Route index path='/' element={<Home />} />
+			<Route path='/:category/:id' element={<Product />} />
 		</Route>
 	)
 );

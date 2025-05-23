@@ -15,9 +15,11 @@ export default function ProductCard({ product }) {
 		numReviews,
 	} = product;
 
+	const categoryParam = category.replace(/\s+/g, '-').toLowerCase();
+
 	return (
 		<Link
-			to={`/${category}/${_id}`}
+			to={`/${categoryParam}/${_id}`}
 			className='w-48 p-2 space-y-3.5 rounded-sm border-1 border-slate-300'
 		>
 			<img className='' src={image} />
