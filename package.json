@@ -1,0 +1,24 @@
+{
+	"name": "ecommerce-app-mern",
+	"version": "2.0.0",
+	"description": "",
+	"homepage": "https://github.com/doinby/ecommerce-app-mern#readme",
+	"bugs": {
+		"url": "https://github.com/doinby/ecommerce-app-mern/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/doinby/ecommerce-app-mern.git"
+	},
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"main": "server.js",
+	"scripts": {
+		"start": "node backend/server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"express": "^5.1.0"
+	}
+}
