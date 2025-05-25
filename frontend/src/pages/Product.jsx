@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import products from '../../public/products.js';
+import products from '../products.js';
 import Rating from '../components/Rating.jsx';
 
 export default function Product() {

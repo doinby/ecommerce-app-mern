@@ -1,4 +1,4 @@
-import products from '../../public/products.js';
+import products from '../products.js';
 import ProductCard from './ProductCard.jsx';
 
 export default function Products() {
