@@ -1,10 +1,20 @@
 import { useParams } from 'react-router';
-import products from '../products.js';
 import Rating from '../components/Rating.jsx';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Product() {
 	const { id } = useParams();
-	const product = products.find(({ _id }) => _id === id);
+	const URL = `${import.meta.env.VITE_BASE_URL}/api/products/${id}`;
+
+	const { isPending, error, data } = useQuery({
+		queryKey: [],
+		queryFn: () => fetch(URL).then((res) => res.json()),
+	});
+
+	if (isPending) return 'Loading...';
+
+	if (error) return 'Error...';
+
 	const {
 		name,
 		image,
@@ -15,7 +25,7 @@ export default function Product() {
 		countInStock,
 		rating,
 		numReviews,
-	} = product;
+	} = data;
 
 	const hasStock = countInStock >= 0;
 	const stockStatus = hasStock ? 'In Stock' : 'Out of Stock';

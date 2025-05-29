@@ -1,10 +1,13 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import products from './data/products.js';
 
 const port = process.env.PORT || 8888;
 
 const app = express();
+
+app.use(cors());
 
 app.get('/', (req, res) => res.send(`Hello World!`));
 app.get('/api/products', (req, res) => res.json(products));
