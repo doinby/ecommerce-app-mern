@@ -2,8 +2,11 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import products from './data/products.js';
+import connectDB from './config/db.js';
 
 const port = process.env.PORT || 8888;
+
+connectDB();
 
 const app = express();
 
