@@ -70,6 +70,5 @@ const productSchema = mongoose.Schema(
 	}
 );
 
-const Product = mongoose.model('Product', productSchema);
-
-export default Product;
+export const Product = mongoose.model('products', productSchema);
+export const Reviews = mongoose.model('reviews', reviewSchema);
